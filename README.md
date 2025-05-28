@@ -21,12 +21,11 @@ Now mv arch.hdd into hds file '~/Parallels/Other Linux.pvm/Other Linux-0.hdd/Oth
 Find the size in bytes of hds file:
 > stat -f%z Other\ Linux-0.hdd.0.\{5fbaabe3-6958-40ff-92a7-860e329aab41\}.hds
 
-Open DiskDescriptor.xml and Note:
-    Under <Disk_Parameters>:
-    1. <LogicSectorSize>512</LogicSectorSize>
-    2. Replace   <Disk_size>4413456384</Disk_size>, with actual size you notes above in stat file and also below
-    <End>4413456384</End> in <Storage> in <StorageData>
-    3. Replace  <Cylinders>8620032</Cylinders> in <Disk_Parameters> with Value of (Disk_size / LogicSectorSize)
+### Open DiskDescriptor.xml and Note:
+  Under <Disk_Parameters>:
+1.    `<LogicSectorSize>512</LogicSectorSize>`
+2.     Replace   `<Disk_size>4413456384</Disk_size>`, with actual size you notes above in stat file and also below `<End>4413456384</End>` in `<Storage>` in `<StorageData>`
+3.     Replace  `<Cylinders>8620032</Cylinders> `in `<Disk_Parameters>` with Value of (Disk_size / LogicSectorSize)
 
 
 
