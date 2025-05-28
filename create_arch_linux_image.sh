@@ -2,14 +2,15 @@
 set -e
 cd ~
 
-curl -o ~/ArchLinuxARM-aarch64-latest.tar.gz -L http://os.archlinuxarm.org/os/ArchLinuxARM-aarch64-latest.tar.gz
-
 # === CONFIGURATION ===
 IMG=~/archroot-64G.img
 SIZE=64G
 ARCH_TAR=~/ArchLinuxARM-aarch64-latest.tar.gz
 ARCHROOT=/mnt/archroot
 
+if [ ! -f "$ARCH_TAR" ]; then
+  curl -o $ARCH_TAR -L http://os.archlinuxarm.org/os/ArchLinuxARM-aarch64-latest.tar.gz
+fi
 # === REQUIREMENTS ===
 sudo apt update
 sudo apt install -y lsof parted dosfstools e2fsprogs grub-efi-arm64 vim tmux libarchive-tools locales
